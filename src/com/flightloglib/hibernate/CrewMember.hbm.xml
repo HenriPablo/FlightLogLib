@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2012 9:23:16 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.flightloglib.hibernate.CrewMember" table="crew_member" schema="public">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" type="long">
+            <column name="version" not-null="true" />
+        </version>
+        <many-to-one name="pilot" class="com.flightloglib.hibernate.Pilot" fetch="select">
+            <column name="pilot" />
+        </many-to-one>
+        <many-to-one name="crewMemberRole" class="com.flightloglib.hibernate.CrewMemberRole" fetch="select">
+            <column name="crew_member_role" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

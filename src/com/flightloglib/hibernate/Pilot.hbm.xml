@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2012 9:23:16 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.flightloglib.hibernate.Pilot" table="pilot" schema="public">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <version name="version" type="long">
+            <column name="version" not-null="true" />
+        </version>
+        <property name="address1" type="string">
+            <column name="address1" />
+        </property>
+        <property name="address2" type="string">
+            <column name="address2" />
+        </property>
+        <property name="certificateNo" type="string">
+            <column name="certificate_no" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="first_name" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="last_name" />
+        </property>
+        <property name="notes" type="string">
+            <column name="notes" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" />
+        </property>
+        <property name="stateProvince" type="string">
+            <column name="state_province" />
+        </property>
+        <property name="zip" type="string">
+            <column name="zip" />
+        </property>
+        <set name="crewMembers" inverse="true">
+            <key>
+                <column name="pilot" />
+            </key>
+            <one-to-many class="com.flightloglib.hibernate.CrewMember" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 28, 2012 7:27:58 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class name="com.flightloglib.domain.Airport" schema="public" table="airport">
+    <!--  
+    <id name="id" type="long">
+      <column name="id"/>
+      <generator class="assigned"/>
+    </id>
+    -->
+    
+     <id column="id" name="id" type="long">
+      <generator class="sequence">
+        <param name="sequence">airport_id</param>
+      </generator>
+    </id>   
+    
+    
+    
+    <version name="version" type="long">
+      <column name="version" not-null="true"/>
+    </version>
+    <property name="icaoIdentifier" type="string">
+      <column name="icao_identifier"/>
+    </property>
+    <property name="longName" type="string">
+      <column name="long_name"/>
+    </property>   
+    
+    <property name="createdOn" type="date">
+        <column name="created_on" />
+    </property> 
+    
+    <property name="modifiedOn" type="date">
+        <column name="modified_on" />
+    </property>
+  </class> 
+  
+</hibernate-mapping>
