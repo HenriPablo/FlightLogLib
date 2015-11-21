@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="FlightLogLib:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FlightLogLib_jar</output-path>
+    <root id="archive" name="FlightLogLib.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/dist/META-INF/MANIFEST.MF" />
+        <element id="module-output" name="FlightLogLib" />
+      </element>
+    </root>
+  </artifact>
+</component>
